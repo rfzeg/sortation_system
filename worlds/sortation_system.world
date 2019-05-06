@@ -37,5 +37,17 @@
       <pose>1.2 5 0 0 0 -1.571</pose> 
     </include>
 
+    <!-- A portal frame structure for mounting the camera -->
+    <include>
+      <uri>model://portal_frame</uri>
+      <pose>1.2 2.5 0 0 0 -1.571</pose>
+    </include>
+
+    <!-- A line scan camera -->
+    <include>
+      <uri>model://camera</uri>
+      <pose>1.2 2.467 1.735 1.571 0 0</pose>
+    </include>
+
   </world>
 </sdf>
