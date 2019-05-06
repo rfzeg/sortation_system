@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="portal_frame">
+    <static>true</static>
+    <link name="link">
+
+     <visual name="viz_top_bar">
+        <pose>0 0 1.705 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.84 0.04</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://portal_frame/materials/scripts</uri>
+            <uri>model://portal_frame/materials/textures</uri>
+            <!-- name must match a name declared inside .material file -->
+            <name>technical_saefty_yellow</name> 
+          </script>
+        </material>
+      </visual>
+
+      <collision name="top_bar">
+        <pose>0 0 1.705 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.84 0.04</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="viz_front">
+        <pose>0 0.4 0.835 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 1.7</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://portal_frame/materials/scripts</uri>
+            <uri>model://portal_frame/materials/textures</uri>
+            <name>technical_saefty_yellow</name>
+          </script>
+        </material>
+      </visual>
+
+      <collision name="front">
+        <pose>0 0.4 0.835 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.04 0.04 1.7</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="viz_back">
+        <pose>0 -0.4 0.835 0 0 0</pose>
+        <geometry>
+          <box>
+              <size>0.04 0.04 1.7</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://portal_frame/materials/scripts</uri>
+            <uri>model://portal_frame/materials/textures</uri>
+            <name>technical_saefty_yellow</name> 
+          </script>
+        </material>
+      </visual>
+
+      <collision name="back">
+        <pose>0 -0.4 0.835 0 0 0</pose>
+        <geometry>
+          <box>
+              <size>0.04 0.04 1.7</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
