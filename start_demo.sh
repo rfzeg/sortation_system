@@ -1,7 +1,6 @@
 #!/bin/sh
-echo "Sortation System Simulation"
 echo ""
-echo "Make sure you have sourced devel/setup.bash"
+echo "Sortation System Simulation"
 echo ""
 xterm  -e  "roslaunch sortation_system gazebo.launch" &
 sleep 8s
@@ -12,4 +11,8 @@ sleep 4s &
 xterm -e "roslaunch sortation_system spawn_portal_frame.launch" &
 sleep 4s &
 
-xterm -e "roslaunch sortation_system spawn_camera.launch"
+xterm -e "roslaunch sortation_system spawn_camera.launch" &
+sleep 4s &
+
+xterm -e "roslaunch sortation_system rviz.launch"
+
