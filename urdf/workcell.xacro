@@ -1,30 +1,60 @@
 <?xml version="1.0" ?>
-<robot name="workcell" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="workcell" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find sortation_system)/urdf/workcell.gazebo" />
 
 <!-- Used for fixing the camera to Gazebo 'base_link' -->
 <link name="world"/>
 
-<!-- optical frame for the Gazebo camera plugin to operate on correctly -->
-<link name="camera_optical_frame"> 
-<!-- virtual link (no geometry, just a mesh for Rviz) -->
-<visual name='camera_visual'>
-  <origin xyz="0.0 0 0" rpy="-1.571 0 0"/>
-    <geometry>
-      <mesh filename="package://sortation_system/models/camera/meshes/camera.dae" scale="0.01 0.01 0.01"/>
-    </geometry>
-</visual>
-</link>
+  <!-- optical frame for the Gazebo camera plugin to operate on correctly -->
+  <link name="camera_link_optical">
+  <!-- virtual link (no geometry) -->
+  </link>
 
-<joint name="world_to_camera" type="fixed">
-  <parent link="world"/>
-  <child link="camera_optical_frame"/>
-  <origin xyz="1.2 2.467 1.735" rpy="0 3.14159 0"/>
-</joint>
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <!-- these values have to be these values otherwise the gazebo camera image
+         won't be aligned properly with the frame it is supposedly originating from -->
+    <origin xyz="1.2 2.467 1.7" rpy="1.571 1.571 0"/>
+    <parent link="world"/>
+    <child link="camera_link"/>
+  </joint>
+
+
+<!-- Camera -->
+
+  <link name="camera_link">
+<!-- 
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+-->
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+
+  </link>
 
 <link name="conveyor_belt_frame"> 
-<!-- virtual link (no geometry, just a mesh for Rviz) -->
+<!-- virtual link (no geometry for Gazebo, just a mesh for Rviz) -->
 <visual name='conveyor_belt_visual_1'>
   <origin xyz="0 0.32 0" rpy="0 0 0"/>
     <geometry>

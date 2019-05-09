@@ -2,7 +2,7 @@
 <launch>
 
     <!--spawn SDF model in gazebo world-->
-    <!-- A line scan camera -->
+    <!-- An area scan camera -->
 	<arg name= "pos_x" default = "1.2"/>
 	<arg name= "pos_y" default = "2.467"/>
 	<arg name= "pos_z" default = "1.735"/>

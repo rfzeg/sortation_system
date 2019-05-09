@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+    command="$(find xacro)/xacro --inorder '$(find sortation_system)/urdf/workcell.xacro'" />
+
+  <!-- Run script that sends a service call to gazebo_ros to spawn a URDF file -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model workcell -param robot_description"/>
+
+</launch>

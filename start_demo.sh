@@ -11,7 +11,7 @@ sleep 4s &
 xterm -e "roslaunch sortation_system spawn_portal_frame.launch" &
 sleep 4s &
 
-xterm -e "roslaunch sortation_system spawn_camera.launch" &
+xterm -e "roslaunch sortation_system spawn_camera_link.launch" &
 sleep 4s &
 
 xterm -e "roslaunch sortation_system rviz.launch"
