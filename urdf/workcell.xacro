@@ -1,21 +1,12 @@
 <?xml version="1.0" ?>
 <robot name="workcell" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+<xacro:property name="M_PI" value="3.1415926535897931" />
+
 <xacro:include filename="$(find sortation_system)/urdf/workcell.gazebo" />
 
 <!-- Used for fixing the camera to Gazebo 'base_link' -->
 <link name="world"/>
-
-  <!-- optical frame for the Gazebo camera plugin to operate on correctly -->
-  <link name="camera_link_optical">
-  <!-- virtual link (no geometry) -->
-  </link>
-
-  <joint name="camera_optical_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <parent link="camera_link"/>
-    <child link="camera_link_optical"/>
-  </joint>
 
   <joint name="camera_joint" type="fixed">
     <!-- these values have to be these values otherwise the gazebo camera image
@@ -50,7 +41,23 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
+  </link>
 
+<!-- generate an optical frame
+     http://www.ros.org/reps/rep-0103.html#suffix-frames
+     so that ROS and the Gazebo camera plugin can operate on the camera frame correctly -->
+
+  <joint name="camera_optical_joint" type="fixed">
+    <!-- these values have to be these values otherwise the gazebo camera
+        image won't be aligned properly with the frame it is supposedly
+        originating from -->
+    <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}"/>
+    <parent link="camera_link"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+  <link name="camera_link_optical">
+  <!-- virtual link (no geometry) -->
   </link>
 
 <link name="conveyor_belt_frame"> 
