@@ -2,10 +2,12 @@
 echo ""
 echo "ROS Sortation System Project Demo"
 echo ""
-xterm  -e  "roslaunch sortation_system gazebo.launch" &
-sleep 10
+# Fire up Gazebo world with conveyor belt model & plugin
+xterm -e "roslaunch conveyor_gazebo conveyor.launch" &
+sleep 12 &
 
-xterm -e "roslaunch sortation_system spawn_conveyor.launch" &
+xterm -e "rosservice call /conveyor/control 'state:
+  power: 30.0'" &
 sleep 4 &
 
 xterm -e "roslaunch sortation_system spawn_portal_frame.launch" &
@@ -23,7 +25,7 @@ xterm -e "roslaunch sortation_system rviz.launch" &
 sleep 4 &
 
 # launch ar_track_alvar to detect AR markers and localize them in space
-xterm -e "roslaunch sortation_system ar_track.launch" &
+xterm -e "roslaunch sortation_system ar_track.launch" # &
 
-sleep 4 &
-xterm -e "rosservice call /gazebo/unpause_physics '{}'"
+# sleep 4 &
+# xterm -e "rosservice call /gazebo/unpause_physics '{}'"
