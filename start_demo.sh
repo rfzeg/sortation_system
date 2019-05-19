@@ -17,14 +17,17 @@ xterm -e "roslaunch sortation_system spawn_camera_link.launch" &
 sleep 4 &
 
 # Launches a box with AR tags on each side
-xterm -e "roslaunch sortation_system spawn_box.launch" &
+# xterm -e "roslaunch sortation_system spawn_box.launch" &
+
+# Launch object_spawner node
+xterm -e "roslaunch sortation_system object_spawner.launch" &
 sleep 6 &
 
-# start RVIZ with a preconfigured view
+# Start RVIZ with a preconfigured view
 xterm -e "roslaunch sortation_system rviz.launch" &
 sleep 4 &
 
-# launch ar_track_alvar to detect AR markers and localize them in space
+# Launch ar_track_alvar to detect AR markers and localize them in space
 xterm -e "roslaunch sortation_system ar_track.launch" # &
 
 # sleep 4 &

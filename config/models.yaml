@@ -1,0 +1,13 @@
+models:
+  - name: tag_box_0
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,0.0] # x,y,z,R,P,Y (in degrees)
+  - name: tag_box_1
+    type: urdf
+    package: sortation_system   
+    pose: [1.2244,4.0,0.85,0.0,0.0,0.0] # x,y,z,R,P,Y (in degrees)
+  - name: tag_box_2
+    type: urdf
+    package: sortation_system  
+    pose: [1.2244,4.0,0.85,0.0,0.0,0.0] # x,y,z,R,P,Y (in degrees)
