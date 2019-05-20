@@ -1,0 +1,10 @@
+Open "tag_box.urdf.xacro" in gedit
+
+Replace:
+<mesh filename="package://sortation_system/models/alvartags/meshes/alvartags$(arg tag_num).dae" />
+by:
+<mesh filename="package://sortation_system/models/alvartags/meshes/alvartags0.dae" />
+
+Save and to convert XACRO to URDF run:
+
+rosrun xacro xacro --check-order tag_box.urdf.xacro > tag_box.urdf
