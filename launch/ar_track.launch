@@ -3,7 +3,7 @@
 
     <!-- launches ar_track_alvar to detect AR markers and localize them in space -->     
 
-    <arg name="marker_size" default="15" /> <!-- in cm -->
+    <arg name="marker_size" default="17" /> <!-- in cm -->
     <arg name="max_new_marker_error" default="0.08" />
     <arg name="max_track_error" default="0.2" />
     <!-- the name of the topic that provides camera frames for detecting the AR tags -->
