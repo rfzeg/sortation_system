@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="conveyor_world">
+
+    <physics type="ode">
+      <max_step_size>0.00625</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>160</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+
+    <!-- Disable shadows. -->
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
+    <!--  A small chunk of the pale blue dot -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Conveyor Belt -->
+    <include>
+      <uri>model://conveyor</uri>
+      <pose>1.2 5 0 0 0 -1.571</pose> <!-- Warning: Do not change this pose -->
+    </include>
+
+    <!-- Container Bin Red -->
+    <include>
+      <uri>model://workcell_bin_red</uri>
+      <pose>2.0 1.0 0.0 0 0 0</pose>
+    </include>
+
+    <!-- Container Bin Green -->
+    <include>
+      <uri>model://workcell_bin_green</uri>
+      <pose>2.0 0.0 0.0 0 0 0</pose>
+    </include>
+
+    <!-- Container Bin Blue -->
+    <include>
+      <uri>model://workcell_bin_blue</uri>
+      <pose>2.0 -1.0 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>

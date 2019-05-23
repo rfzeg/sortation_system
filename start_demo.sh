@@ -5,8 +5,8 @@ echo ""
 # The -e option to xterm is useful for running a single command before exiting
 
 # Fire up Gazebo world with conveyor belt model & plugin
-xterm -e "roslaunch conveyor_gazebo conveyor.launch" &
-sleep 12
+xterm -e "roslaunch sortation_system conveyor.launch" &
+sleep 10
 
 # Activate the conveyor belt:
 xterm -e "rosservice call /conveyor/control 'state:
