@@ -1,22 +1,43 @@
 <?xml version="1.0"?>
 <robot name="cardboard_box" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<!-- This is a URDF model of a carboard box with one main cuboid body and one AR tag on top -->
+<!-- Author: Robero Zegers R. -->
+<!-- Example (to use delete space in front of -inorder):
+     xacro cardbox_box_generator.urdf.xacro - -inorder mass:=0.8 lenght:=0.15 width:=0.1 height:=0.09 ar_tag:=5 tag_margin:=0 > generated.urdf -->
 
+<xacro:arg name="mass" default="1.0"/>
+<xacro:property name="mass" value="$(arg mass)"/>
+<!-- x -->
+<xacro:arg name="lenght" default="0.2"/>
+<xacro:property name="lenght" value="$(arg lenght)"/>
+<!-- y -->
+<xacro:arg name="width" default="0.2"/>
+<xacro:property name="width" value="$(arg width)"/>
+<!-- z -->
+<xacro:arg name="height" default="0.2"/>
+<xacro:property name="height" value="$(arg height)"/>
+
+<!-- Set the AR Tag to include (integer value in range 0 to 17) -->
+<xacro:arg name="ar_tag" default="0"/>
+<xacro:property name="ar_tag" value="$(arg ar_tag)"/> 
+<!-- Size of AR Tag with border-->
+<xacro:arg name="ar_tag_side" default="0.1"/>
+<xacro:property name="ar_tag_side" value="$(arg ar_tag_side)"/> 
+<!-- Margin of the tag border to the box border -->
+<xacro:arg name="tag_margin" default="0.02"/>
+<xacro:property name="tag_margin" value="$(arg tag_margin)"/>
+<!-- Offset distance from the bottom of the box to the ground plane -->
+<xacro:arg name="ground_offset" default="0.05"/>
+<xacro:property name="ground_offset" value="$(arg ground_offset)"/>
+<!-- Inch to cm unit convertion, do not change -->
+<xacro:property name="scale_factor" value="2.54"/>
+
+<!-- Inertia matrix calculation -->
 <xacro:macro name="inertial_cuboid" params="x y z mass">
     <inertia ixx="${(1/12) * mass * (y*y + z*z)}" ixy="0.0" ixz="0.0"
              iyy="${(1/12) * mass * (x*x + z*z)}" iyz="0.0"
              izz="${(1/12) * mass * (x*x + y*y)}" />
 </xacro:macro>
-
-<!-- This is a URDF model of a carboard box with one main body and one AR tag on top -->
-<xacro:property name="mass" value="1.0" />
-<xacro:property name="lenght" value="0.2" /> <!-- x -->
-<xacro:property name="width" value="0.2" /> <!-- y -->
-<xacro:property name="height" value="0.2" /> <!-- z -->
-<xacro:property name="ground_offset" value="0.1" />
-<xacro:property name="scale_factor" value="2.54" />
-<xacro:property name="ar_tag_side" value="0.1" />
-<!-- margin of the tag border to the box border -->
-<xacro:property name="tag_margin" value="0.005" />
 
   <link name="box_link">
     <inertial>
@@ -53,13 +74,13 @@
          <box size="${ar_tag_side} ${ar_tag_side} 0.0001"/>
        </geometry>
        <!-- origin with respect to the position of joint to the box -->
-       <origin xyz="0.0 0.0 0.002" rpy="0 0 0"/> <!-- elevate 1 mm -->
+       <origin xyz="0.0 0.0 0.002" rpy="0 0 0"/> <!-- elevate 2 mm to avoid collision with box texture -->
      </visual>
    </link>
 
   <gazebo reference="ar_tag">
       <!-- Set the Tag number -->
-      <material>ARTag/0</material>
+      <material>ARTag/${ar_tag}</material>
   </gazebo>
 
 </robot>
