@@ -1,13 +1,289 @@
 models:
-  - name: tag_box_0
+  - name: box_150x100x90_0.57kg_T0
     type: urdf
     package: sortation_system
-    pose: [1.2244,4.0,0.85,0.0,0.0,0.0] # x,y,z,R,P,Y (in degrees)
-  - name: tag_box_1
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T1
     type: urdf
-    package: sortation_system   
-    pose: [1.2244,4.0,0.85,0.0,0.0,0.0] # x,y,z,R,P,Y (in degrees)
-  - name: tag_box_2
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T10
     type: urdf
-    package: sortation_system  
-    pose: [1.2244,4.0,0.85,0.0,0.0,0.0] # x,y,z,R,P,Y (in degrees)
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T11
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T12
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T13
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T14
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T15
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T16
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T17
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T2
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T3
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T4
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T5
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T6
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T7
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T8
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_150x100x90_0.57kg_T9
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T0
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T1
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T10
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T11
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T12
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T13
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T14
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T15
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T16
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T17
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T2
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T3
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T4
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T5
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T6
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T7
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T8
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_200x150x150_1.69kg_T9
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T0
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T1
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T10
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T11
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T12
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T13
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T14
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T15
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T16
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T17
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T2
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T3
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T4
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T5
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T6
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T7
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T8
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_300x200x150_3.58kg_T9
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T0
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T1
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T10
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T11
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T12
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T13
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T14
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T15
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T16
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T17
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T2
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T3
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T4
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T5
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T6
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T7
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T8
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
+  - name: box_400x300x180_9.105kg_T9
+    type: urdf
+    package: sortation_system
+    pose: [1.2244,4.0,0.85,0.0,0.0,90.0] # x,y,z,R,P,Y (deg)
