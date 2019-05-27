@@ -2,8 +2,13 @@
 Author : Roberto Zegers R.
 
 ## Description
-This project implements a simulated sortation system to serve as a demonstration for how many individual systems are integrated and communicate through ROS for processing parcels or goods in a distribution center. The simulated environment includes a conveyor belt, a 3 Degrees of Freedom (DoF) Cartesian Robot and a camera for tracking parcels.
+This project implements a simulated sortation system for processing parcels or goods in a distribution center. It serves as a demonstration for system integration and communication using ROS.
+ The simulated environment includes a conveyor belt, a 3 degrees of freedom (DoF) cartesian robot and a camera for reading AR Tags.
 The main logic consists in detecting the AR Tags on the parcels, reading their ID number, and using the robotic arm to push them to a corresponding container bin.
+
+![](docs/imgs/ar_tag_boxes.png)  
+Figure 1: Some of the 72 carboard boxes with AR Tags on top included in this package.  
+
 
 ## Dependencies:
 + ROS Kinetic + Gazebo 7
@@ -80,7 +85,8 @@ And run:
 Resize camera mesh with Blender:  
 
 + File → Import → Collada (.dae)
-
 + Pull out the right-tab in blender (look for a plus sign near the upper right of the render window). Under the Dimensions section of this tab, divide the x,y,z components by 1000. NOTE: At the moment scalling is applied using the <scale> tag.
-
 + File → Export → Collada (.dae) → Export COLLADA
+
+## Resources:
++ http://wiki.ros.org/xacro
