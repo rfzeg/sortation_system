@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spawns a row of boxes of same size with a different AR Tag on each -->
+<!-- REQUIRES: a running Gazebo simulation (e.g. roslaunch gazebo_ros empty_world.launch) -->
+<!-- Run directly or execute from the main launch file spawn_all_boxes_demo.launch -->
+
+<launch>
+  <!-- default args, overwritten by caller (e.g. spawn_all_boxes_demo.launch) -->
+  <arg name="column" default="0"/>
+  <arg name="pose_arg_x" default="0"/>
+  <arg name="urdf_file_prefix" default="box_150x100x90_0.57kg"/> <!-- required for spwaning multiple rows each with a different boxsize -->
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_0"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 0"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T0.urdf"/>
+    <!-- <arg name= "model_name" default= "box_150x100x90_0.57kg_T0"/> -->
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_1"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 0.25"/> 
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T1.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_2"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 0.5"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T2.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_3"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 0.75"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T3.urdf"/>
+  </include>  
+  
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_4"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 1"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T4.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_5"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 1.25"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T5.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_6"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 1.5"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T6.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_7"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 1.75"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T7.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_8"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 2"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T8.urdf"/>
+  </include>
+
+  <include file="$(find sortation_system)/launch/spawn_one_box.launch">
+    <arg name="model_name" value="model_$(arg column)_9"/>
+    <arg name="pose_args" value="$(arg pose_arg_x) -y 2.25"/>
+    <!-- Filename and model name (to display in Gazebo) of the specific box -->
+    <arg name="urdf_file" value="$(arg urdf_file_prefix)_T9.urdf"/>
+  </include>
+  
+</launch>

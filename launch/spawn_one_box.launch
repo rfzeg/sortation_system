@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Spawn one box in Gazebo -->
+<!-- REQUIRES: a running Gazebo simulation (e.g. roslaunch gazebo_ros empty_world.launch) -->
+
+<launch>
+
+<?ignore
+
+  <!-- Arguments that can be passed to this launch file from the CLI, for example paused:=true -->
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="physics" default="ode"/>
+  <arg name="extra_gazebo_args" default="--verbose"/>
+  <arg name="world_name" default="worlds/empty.world"/>
+  <!--<arg name="world_name" default="$(find sortation_system)/worlds/sortation_system.world"/>-->
+
+<!-- Launch Gazebo with the specified world -->
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="paused" value="$(arg paused)" />
+  <arg name="use_sim_time" value="$(arg use_sim_time)" />
+  <arg name="gui" value="$(arg gui)" />
+  <arg name="headless" value="$(arg headless)" />
+  <arg name="debug" value="$(arg debug)" />
+  <arg name="physics" default="$(arg physics)"/>
+  <arg name="extra_gazebo_args" value="$(arg extra_gazebo_args)"/>
+  <arg name="world_name" value="$(arg world_name)" />    
+</include>
+
+?> <!-- end of non-existing processing instruction -->
+
+<!-- Spawn cardboard box -->
+<!-- default args, overwritten by caller (e.g. row_of_boxes_of_same_size.launch) -->
+<arg name="urdf_file" default="tag_box_0.urdf"/>
+<arg name= "model_name" default= "tag_box_0"/> <!-- Name of the model in Gazebo -->
+<arg name="pose_args" default=""/>
+
+<!-- Load URDF file to parameter server-->
+<param name="/$(arg model_name)/robot_description" command="cat '$(find sortation_system)/urdf/$(arg urdf_file)'" />
+
+<!-- Spawn model -->
+<node pkg="gazebo_ros" type="spawn_model" name="spawn_model_$(arg model_name)" args="-urdf -param $(arg model_name)/robot_description -namespace $(arg model_name) -model box_$(arg model_name) $(arg pose_args)"/>
+
+</launch>
