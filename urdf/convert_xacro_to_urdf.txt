@@ -13,10 +13,18 @@ rosrun xacro xacro --check-order tag_box.urdf.xacro > tag_box.urdf
 
 For usign the file carboard_box_generator.urdf.xacro:
 
-$ rosrun xacro xacro --inorder carboard_box_generator.urdf.xacro > cardboard_box_test1.urdf
+$ rosrun xacro xacro --inorder carboard_box_generator.urdf.xacro > cardboard_box_test2.urdf
 or
 $ rosrun xacro xacro --inorder mass:=0.8 lenght:=0.15 width:=0.1 height:=0.09 ar_tag:=5 tag_margin:=0 carboard_box_generator.urdf.xacro > cardboard_box_test2.urdf
 
 To spawn above URDF object at height z = 0.5 meter and assign the name of the model in simulation to be my_object:
 $ roscd sortation_system/urdf
-$ rosrun gazebo_ros spawn_model -file `pwd`/cardboard_box_test1.urdf -urdf -z 0.5 -model my_object
+$ rosrun gazebo_ros spawn_model -file `pwd`/cardboard_box_test2.urdf -urdf -z 0.5 -model my_object
+
+--------------------------
+To run the python script that generate all AR Tags on a given box size:
+$ python generate_boxes.py
+then
+$ rosrun gazebo_ros spawn_model -file `pwd`/box_150x100x90_0.8kg_T13.urdf -urdf -z 0.5 -model my_object
+
+Note: running the script above will overwrite any file that has the same filename without confirmation prompt.
