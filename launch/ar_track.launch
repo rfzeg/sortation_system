@@ -3,7 +3,7 @@
 
     <!-- launches ar_track_alvar to detect AR markers and localize them in space -->     
 
-    <arg name="marker_size" default="17" /> <!-- in cm -->
+    <arg name="marker_size" default="8.5" /> <!-- in cm -->
     <arg name="max_new_marker_error" default="0.08" />
     <arg name="max_track_error" default="0.2" />
     <!-- the name of the topic that provides camera frames for detecting the AR tags -->
@@ -11,7 +11,7 @@
     <!-- the name of the topic of camera parameters used to correctly localize the tag in the 3D world -->
     <arg name="cam_info_topic" default="/camera1/camera_info" />
     <!-- the frame which the calculated pose of the marker refers to (frame associated to the camera position) -->
-    <arg name="output_frame" default="/camera_link_optical" />
+    <arg name="output_frame" default="camera_image_orientation_link" />
     <!-- maximum frequency, with which the whole algorithm is running -->
     <arg name="max_frecuency" default="10" />
 

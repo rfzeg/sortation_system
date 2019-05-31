@@ -2,6 +2,15 @@
 <robot name="workcell" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:property name="M_PI" value="3.1415926535897931" />
+  
+  <!-- Set camera position or distance of camera base to parent link (to which it is fixed) -->
+  <xacro:property name="cam_px" value="1.2" />
+  <xacro:property name="cam_py" value="2.467"/>
+  <xacro:property name="cam_pz" value="1.69" />
+  <!-- Orientation: change to make sure image displayed in rviz is correctly alligned to world -->
+  <xacro:property name="cam_or" value="0" />
+  <xacro:property name="cam_op" value="${M_PI/2}" /> <!-- point camera down -->
+  <xacro:property name="cam_oy" value="${-M_PI/2}" /> <!-- turn camera clockwise 90 deg -->
 
 <xacro:include filename="$(find sortation_system)/urdf/workcell.gazebo" />
 
@@ -11,39 +20,48 @@
   <joint name="camera_joint" type="fixed">
     <!-- these values have to be these values otherwise the gazebo camera image
          won't be aligned properly with the frame it is supposedly originating from -->
-    <origin xyz="1.2 2.467 1.7" rpy="1.571 1.571 0"/>
+    <origin xyz="${cam_px} ${cam_py} ${cam_pz}" rpy="${cam_or} ${cam_op} ${cam_oy}"/>
     <parent link="world"/>
-    <child link="camera_link"/>
+    <child link="camera_baselink"/>
   </joint>
 
-
-<!-- Camera -->
-
-  <link name="camera_link">
-<!-- 
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-	<box size="0.05 0.05 0.05"/>
-      </geometry>
-    </collision>
-
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-	<box size="0.05 0.05 0.05"/>
-      </geometry>
-      <material name="red"/>
-    </visual>
--->
-    <inertial>
-      <mass value="1e-5" />
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-    </inertial>
+  <!-- Camera common link (mesh and optical)-->
+  <link name="camera_baselink">
+  <!-- this link name must match the name of the reference tag in the .gazebo file -->
+  <!-- virtual link (no geometry) -->
   </link>
 
-<!-- generate an optical frame
+    <joint name="camera_mesh_joint" type="fixed">
+      <origin xyz="-0.01 0 0" rpy="0 0 ${-M_PI/2}"/> <!-- this keeps the mesh out of sight and aligned with the image orientation, do not change -->
+      <parent link="camera_baselink"/>
+      <child link="camera_mesh_link"/>
+    </joint>
+
+      <link name="camera_mesh_link">
+      <visual>
+       <!-- Makes sure this particular mesh is correctly aligned/rotated/centrated with respect to the joint origin -->
+       <origin xyz="0 0.025 0" rpy="0 0 0"/>
+        <geometry>
+         <mesh filename="package://sortation_system/models/camera/meshes/camera.dae" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </visual>
+      <collision>
+      <!-- Makes sure collision box is correctly rotated with respect to the mesh -->
+       <origin xyz="0 0 0" rpy="${-M_PI/2} 0 0"/>
+        <geometry>
+         <box size="0.104 0.025 0.053"/>
+        </geometry>
+       </collision>
+       <inertial>            <!-- config -->
+        <mass value="0.564" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.003881243" ixy="0.0" ixz="0.0"
+                 iyy="0.000498940" iyz="0.0"
+                 izz="0.003879257" />
+       </inertial>
+  </link>
+
+<!-- generate a dedicated frame
      http://www.ros.org/reps/rep-0103.html#suffix-frames
      so that ROS and the Gazebo camera plugin can operate on the camera frame correctly -->
 
@@ -51,12 +69,12 @@
     <!-- these values have to be these values otherwise the gazebo camera
         image won't be aligned properly with the frame it is supposedly
         originating from -->
-    <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}"/>
-    <parent link="camera_link"/>
-    <child link="camera_link_optical"/>
+    <origin xyz="0 0 0" rpy="${-M_PI/2} 0 ${-M_PI/2}"/> <!-- This keeps the ar_tag orientation pointing right (in right-hand sense) when camera_baselink RPY = 0 0 0 -->
+    <parent link="camera_baselink"/>
+    <child link="camera_image_orientation_link"/>
   </joint>
 
-  <link name="camera_link_optical">
+  <link name="camera_image_orientation_link">
   <!-- virtual link (no geometry) -->
   </link>
 
