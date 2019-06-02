@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
     code_id = -1; // reset to -1 to indicate that no marker ID is being processed
     } else if (code_id > 5 && code_id <= 11) {
     // Case container bin 2
-    j1_pos_msg.data = 1.16;
+    j1_pos_msg.data = 0.96;
     j3_pos_msg.data = 0.78;
     // Move joint 1 in front of target container bin 2
     ROS_INFO("Target position of joint 1: %.2f", j1_pos_msg.data);
@@ -116,7 +116,7 @@ int main(int argc, char **argv) {
     code_id = -1; // reset to -1 to indicate that no marker ID is being processed
     } else if (code_id > 11 && code_id <= 17) {
     // Case container bin 3
-    j1_pos_msg.data = 2.16;
+    j1_pos_msg.data = 1.76;
     j3_pos_msg.data = 0.78;
     // Move joint 1 in front of target container bin 3
     ROS_INFO("Target position of joint 1: %.2f", j1_pos_msg.data);

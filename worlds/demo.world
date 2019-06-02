@@ -33,19 +33,19 @@
     <!-- Container Bin Red -->
     <include>
       <uri>model://workcell_bin_red</uri>
-      <pose>2.0 1.0 0.0 0 0 0</pose>
+      <pose>1.86 1.0 0.0 0 0 0</pose>
     </include>
 
     <!-- Container Bin Green -->
     <include>
       <uri>model://workcell_bin_green</uri>
-      <pose>2.0 0.0 0.0 0 0 0</pose>
+      <pose>1.86 0.2 0.0 0 0 0</pose>
     </include>
 
     <!-- Container Bin Blue -->
     <include>
       <uri>model://workcell_bin_blue</uri>
-      <pose>2.0 -1.0 0 0 0 0</pose>
+      <pose>1.86 -0.6 0 0 0 0</pose>
     </include>
 
   </world>
