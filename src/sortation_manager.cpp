@@ -59,8 +59,8 @@ int main(int argc, char **argv) {
     ROS_INFO("Target position of joint 1: %.2f", j1_pos_msg.data);
     prepareJoint1(j1_position_pub, j2_position_pub);
     // Wait a fixed period of time, then trigger the sliding pusher plate
-    ROS_INFO("Now waiting 8.5 seconds");
-    ros::Duration(8.5).sleep(); // sleep for 8.5 seconds, wait this long before pushing
+    ROS_INFO("Now waiting 8.2 seconds");
+    ros::Duration(8.2).sleep(); // sleep for 8.2 seconds, wait this long before pushing
     /// Actuate pusher
     // extend pusher (joint 3)
     for (int j = 0; j < num_loops; j++) // Publish data for num_loops/loopRate seconds
@@ -90,8 +90,8 @@ int main(int argc, char **argv) {
     ROS_INFO("Target position of joint 1: %.2f", j1_pos_msg.data);
     prepareJoint1(j1_position_pub, j2_position_pub);
     // Wait a fixed period of time, then trigger the sliding pusher plate
-    ROS_INFO("Now waiting 13 seconds");
-    ros::Duration(13.0).sleep(); // sleep for 13 seconds, wait this long before pushing
+    ROS_INFO("Now waiting 12.5 seconds");
+    ros::Duration(12.5).sleep(); // sleep for 12.5 seconds, wait this long before pushing
 
     /// Actuate pusher
     // extend pusher (joint 3)
