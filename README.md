@@ -29,8 +29,7 @@ Or alternatively start the demo launching every node manually:
 
 1. **Fire up Gazebo world with conveyor belt model & plugin:**  
   `$ roslaunch conveyor_gazebo conveyor.launch`  
-2. **In a new terminal spawn the portal frame, camera and deflector robot:**  
-  `$ roslaunch sortation_system spawn_portal_frame.launch`  
+2. **In a new terminal spawn the camera and deflector robot:**  
   `$ roslaunch sortation_system spawn_camera_link.launch`  
   `$ roslaunch deflector_robot spawn_robot.launch`  
 3. **Execute the robot controllers:**  

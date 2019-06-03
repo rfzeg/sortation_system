@@ -13,9 +13,7 @@ xterm -e "rosservice call /conveyor/control 'state:
   power: 20.0'" &
 sleep 4
 
-xterm -e "roslaunch sortation_system spawn_portal_frame.launch" &
-sleep 4
-
+# Spawn Workcell
 xterm -e "roslaunch sortation_system spawn_camera_link.launch" &
 sleep 4
 

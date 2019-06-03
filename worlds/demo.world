@@ -48,5 +48,11 @@
       <pose>1.86 -0.6 0 0 0 0</pose>
     </include>
 
+    <!-- A portal frame structure for mounting sensors -->
+    <include>
+      <uri>model://portal_frame</uri>
+      <pose>1.2 2.5 0 0 0 -1.571</pose>
+    </include>
+
   </world>
 </sdf>
