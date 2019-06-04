@@ -9,15 +9,20 @@
       <gravity>0 0 -9.8</gravity>
     </physics>
 
-    <!-- Disable shadows. -->
+    <!-- Disable shadows, disable grid -->
     <scene>
       <shadows>false</shadows>
+      <ambient>0.2 0.2 0.2 1</ambient>
+      <background>1 1 1 1</background>
+      <grid>false</grid>
+      <origin_visual>false</origin_visual>
     </scene>
 
-    <!--  A small chunk of the pale blue dot -->
+    <!-- Ground plane -->
     <include>
       <uri>model://ground_plane</uri>
     </include>
+
 
     <!-- A global light source -->
     <include>
@@ -30,23 +35,50 @@
       <pose>1.2 5 0 0 0 -1.571</pose> <!-- Warning: Do not change this pose -->
     </include>
 
-    <!-- Container Bin Red -->
+    <!-- Red Container Bin -->
     <include>
       <uri>model://workcell_bin_red</uri>
-      <pose>1.86 1.0 0.0 0 0 0</pose>
+      <pose>1.86 1.1 0.147 0 0 0</pose>
     </include>
 
-    <!-- Container Bin Green -->
+    <!-- Pallet under Red Container Bin -->
+    <model name="pallet_1">
+    <static>true</static>
+    <include>
+      <uri>model://euro_pallet2</uri>
+      <pose>1.86 1.1 0.06 0 0 0</pose>
+    </include>
+    </model>
+
+    <!-- Green Container Bin -->
     <include>
       <uri>model://workcell_bin_green</uri>
-      <pose>1.86 0.2 0.0 0 0 0</pose>
+      <pose>1.86 0.2 0.147 0 0 0</pose>
     </include>
 
-    <!-- Container Bin Blue -->
+    <!-- Pallet under Green Container Bin -->
+    <model name="pallet_2">
+    <static>true</static>
+    <include>
+      <uri>model://euro_pallet2</uri>
+      <pose>1.86 0.2 0.06 0 0 0</pose>
+    </include>
+    </model>
+
+    <!-- Blue Container Bin -->
     <include>
       <uri>model://workcell_bin_blue</uri>
-      <pose>1.86 -0.6 0 0 0 0</pose>
+      <pose>1.86 -0.7 0.147 0 0 0</pose>
     </include>
+
+    <!-- Pallet under Blue Container Bin -->
+    <model name="pallet_3">
+    <static>true</static>
+    <include>
+      <uri>model://euro_pallet2</uri>
+      <pose>1.86 -0.7 0.06 0 0 0</pose>
+    </include>
+    </model>
 
     <!-- A portal frame structure for mounting sensors -->
     <include>
