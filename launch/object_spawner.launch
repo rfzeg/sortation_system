@@ -11,12 +11,15 @@
   <arg name="yaml_relative_path" default="/config/models.yaml"/>
   <!-- Boolean value that indicates whether to spawn a models in random order or iterate the dictionary (arbitrarily unordered) -->
   <arg name="random_order" default="true"/> <!-- set "true" or "false" -->
+  <!-- Time period required to pass before spawning next object (in seconds) -->
+  <arg name="time_interval" default="20.0"/>
 
   <node name="object_spawner_node" pkg="object_spawner" type="object_spawner.py" output="screen">
     <!-- Load node configuration parameters to parameter server -->
     <param name="yaml_package_name" type="string" value="$(arg yaml_package_name)"/>
     <param name="yaml_relative_path" type="string" value="$(arg yaml_relative_path)"/>
     <param name="random_order" type="bool" value="$(arg random_order)"/>
+    <param name="time_interval" type="double" value="$(arg time_interval)"/>
   </node>
 
 </launch>
